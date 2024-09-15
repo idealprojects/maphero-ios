@@ -14,6 +14,6 @@ let package = Package(
         .binaryTarget(
             name: "MapHero",
             url: "https://github.com/idealprojects/maphero-native/releases/download/0.0.1/MapHero_ios_device.framework.zip",
-            checksum: "")
+            checksum: "3305308a5f54da7c07c7ad61fd390004e6f7fcc7193885582e3e3dec1784f89d")
     ]
 )
