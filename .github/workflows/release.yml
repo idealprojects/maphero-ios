@@ -29,7 +29,7 @@ jobs:
     
       - name: Insert new checksum in Package.swift
         run: |
-          sed -i 's#\(checksum: "\)\([^"]*\)#\1${{ env.checksum }}#' Package.swift
+          sed -i 's#\(checksum: "\)\([^"]*\)#\1${{ secrets.checksum }}#' Package.swift
 
       - name: Insert download URL in Package.swift
         run: |
