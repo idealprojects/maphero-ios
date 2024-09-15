@@ -38,13 +38,17 @@ jobs:
       - name: Validate Package.swift
         run: swift package describe
 
+
       - name: Push Package.swift
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add Package.swift
-          git config --global user.email "git@maplibre.org"
+          git config --global user.email "git@maphero.io"
           git config --global user.name "GitHub Actions"
           git commit -m "Release ${{ github.event.inputs.version }}"
           git tag -a ${{ github.event.inputs.version }} -m "Release ${{ github.event.inputs.version }}"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git push --atomic origin main ${{ github.event.inputs.version }}
 
       - name: Download changelog.md
