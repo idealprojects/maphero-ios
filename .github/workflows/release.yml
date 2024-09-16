@@ -11,6 +11,10 @@ on:
         description: Version number of release
         required: true
         type: string
+      checksum:
+        description: checksum of release
+        required: true
+        type: string
       changelog_url:
         description: URL for changelog of release
         required: false
@@ -29,7 +33,7 @@ jobs:
     
       - name: Insert new checksum in Package.swift
         run: |
-          sed -i 's#\(checksum: "\)\([^"]*\)#\1${{ secrets.checksum }}#' Package.swift
+          sed -i 's#\(checksum: "\)\([^"]*\)#\1${{ github.event.inputs.checksum }}#' Package.swift
 
       - name: Insert download URL in Package.swift
         run: |
