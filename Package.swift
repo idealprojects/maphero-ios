@@ -13,7 +13,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "MapHero",
-            url: "https://github.com/idealprojects/maphero-ios/releases/download/1.1.1/MapHero.dynamic.xcframework.zip",
-            checksum: "c0d049a258980a654454177c7d6401ad7556cfdfe7539fa275d97bf3db640353")
+            url: "https://github.com/idealprojects/maphero-ios/releases/download/1.1.2/MapHero.dynamic.xcframework.zip",
+            checksum: "aed93b847715b63d09d9393271d22ba2f04bf9466f438d701e57e64449afc526")
     ]
 )
